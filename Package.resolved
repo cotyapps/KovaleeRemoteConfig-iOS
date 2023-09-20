@@ -77,9 +77,9 @@
         "package": "KovaleeSDK",
         "repositoryURL": "https://github.com/cotyapps/Kovalee-iOS-SDK",
         "state": {
-          "branch": null,
-          "revision": "2238eb2f66c4e705ca3c38e619e74a4556306528",
-          "version": "1.3.0"
+          "branch": "gdpr-optout",
+          "revision": "9c230c2d8535092ba33a24d4249972a8a441101d",
+          "version": null
         }
       },
       {
