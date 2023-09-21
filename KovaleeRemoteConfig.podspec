@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "KovaleeRemoteConfig"
-  spec.version      = "1.1.2"
+  spec.version      = "1.2.0"
   spec.summary      = "KovaleeRemoteConfig simplifies AB testing experiments."
   spec.description  = <<-DESC
   Unsure about how to present a feature? KovaleeRemoteConfig simplifies AB testing, helping you figure out the most user-friendly way to show off your new feature and optimize old ones.
@@ -25,7 +25,7 @@ It's part of a broader project KovaleeSDK
   spec.swift_version    = '5.7'
   spec.source_files  = "Sources/KovaleeRemoteConfig/*.swift"
 
-  spec.dependency "KovaleeSDK", "~>1.3.2"
+  spec.dependency "KovaleeSDK"
 
   spec.static_framework = true
 

@@ -16,11 +16,14 @@ struct FirebaseWrapperImpl: RemoteConfigurationManager, Manager {
 			options.projectID = keys.projectId
 			
 			FirebaseApp.configure(options: options)
-			Analytics.setAnalyticsCollectionEnabled(true)
 		}
 
         self.remoteConfig = RemoteConfig.remoteConfig()
     }
+
+	func setDataCollectionEnabled(_ enabled: Bool) {
+		Analytics.setAnalyticsCollectionEnabled(enabled)
+	}
 
     func setDefaultValues(_ values: [String: Any]) {
         self.remoteConfig.setDefaults(values as? [String: NSObject])
