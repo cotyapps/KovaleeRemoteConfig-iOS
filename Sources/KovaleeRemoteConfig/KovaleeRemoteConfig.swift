@@ -53,19 +53,19 @@ extension Kovalee {
 	///    - key: string key of the remote value that the user is trying to load
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
 	@available(*, deprecated, renamed: "abTestValue")
-	public static func abTestValue(forKey key: String = abTestKey) async -> RemoteConfigValue? {
+	public static func abTestValue(forKey key: String) async -> String? {
 		await Self.abTestValue()
 	}
 
 	/// Retrieve the value associated with an AB testing experiment
 	///
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
-	public static func abTestValue() async -> RemoteConfigValue? {
-		guard let data = await Self.shared.kovaleeManager?.abTestValue(forKey: Self.abTestKey) else {
+	public static func abTestValue() async -> String? {
+		guard let value = await Self.shared.kovaleeManager?.abTestValue(forKey: Self.abTestKey) else {
 			KLogger.error("❌ No AB test value found")
 			return nil
 		}
 
-		return RemoteConfigValue(data: data)
+		return value
 	}
 }
