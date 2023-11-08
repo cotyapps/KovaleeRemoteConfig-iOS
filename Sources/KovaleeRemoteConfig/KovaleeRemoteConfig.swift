@@ -25,13 +25,13 @@ extension Kovalee {
 	///    - key: string key of the remote value that the user is trying to load
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
 	/// - Throws: throws an error of type ``KovaleeError/remoteValueAlreadyUsedForABTest`` if they key is used for an AB Test experiment
-	public static func remoteValue(forKey key: String) async throws -> RemoteConfigValue? {
+	public static func remoteValue(forKey key: String) -> RemoteConfigValue? {
 		guard key != abTestKey else {
 			KLogger.error("❌ ab_test_version is a private key and can't be used for remote config")
 			return nil
 		}
 
-		guard let data = try await Self.shared.kovaleeManager?.remoteValue(forKey: key) else {
+		guard let data = try? Self.shared.kovaleeManager?.remoteValue(forKey: key) else {
 			return nil
 		}
 
@@ -53,15 +53,15 @@ extension Kovalee {
 	///    - key: string key of the remote value that the user is trying to load
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
 	@available(*, deprecated, renamed: "abTestValue")
-	public static func abTestValue(forKey key: String = abTestKey) async -> RemoteConfigValue? {
-		await Self.abTestValue()
+	public static func abTestValue(forKey key: String = abTestKey) -> RemoteConfigValue? {
+		Self.abTestValue()
 	}
 
 	/// Retrieve the value associated with an AB testing experiment
 	///
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
-	public static func abTestValue() async -> RemoteConfigValue? {
-		guard let data = await Self.shared.kovaleeManager?.abTestValue(forKey: Self.abTestKey) else {
+	public static func abTestValue() -> RemoteConfigValue? {
+		guard let data = Self.shared.kovaleeManager?.abTestValue(forKey: Self.abTestKey) else {
 			KLogger.error("❌ No AB test value found")
 			return nil
 		}
