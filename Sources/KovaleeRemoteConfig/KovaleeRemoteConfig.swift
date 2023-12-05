@@ -25,13 +25,13 @@ extension Kovalee {
 	///    - key: string key of the remote value that the user is trying to load
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
 	/// - Throws: throws an error of type ``KovaleeError/remoteValueAlreadyUsedForABTest`` if they key is used for an AB Test experiment
-	public static func remoteValue(forKey key: String) -> RemoteConfigValue? {
+	public static func remoteValue(forKey key: String) async -> RemoteConfigValue? {
 		guard key != abTestKey else {
 			KLogger.error("❌ ab_test_version is a private key and can't be used for remote config")
 			return nil
 		}
 
-		guard let data = try? Self.shared.kovaleeManager?.remoteValue(forKey: key) else {
+		guard let data = try? await Self.shared.kovaleeManager?.remoteValue(forKey: key) else {
 			return nil
 		}
 
