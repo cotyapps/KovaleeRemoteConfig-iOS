@@ -46,8 +46,11 @@ struct FirebaseWrapperImpl: RemoteConfigurationManager, Manager {
         }
     }
 
-    func value(forKey key: String) -> Data {
-        remoteConfig.configValue(forKey: key).dataValue
+	func value(forKey key: String) async throws -> Data {
+		await fetchAndActivateRemoteConfig()
+		KLogger.debug("🛰️ initialization complete")
+		
+		return remoteConfig.configValue(forKey: key).dataValue
     }
 
     private let remoteConfig: RemoteConfig
