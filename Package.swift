@@ -18,7 +18,8 @@ let package = Package(
 		),
     ],
     dependencies: [
-		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", from: Version(1, 5, 6)),
+//		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", from: Version(1, 5, 6)),
+		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", branch: "abvalue-setting"),
 		.package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: Version(10, 12, 0))
     ],
     targets: [
