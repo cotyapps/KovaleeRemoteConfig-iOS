@@ -21,6 +21,10 @@ struct FirebaseWrapperImpl: RemoteConfigurationManager, Manager {
         self.remoteConfig = RemoteConfig.remoteConfig()
     }
 
+	func setFetchTimeout(_ timeout: Double) {
+		self.remoteConfig.configSettings.fetchTimeout = timeout
+	}
+
 	func setDataCollectionEnabled(_ enabled: Bool) {
 		Analytics.setAnalyticsCollectionEnabled(enabled)
 	}

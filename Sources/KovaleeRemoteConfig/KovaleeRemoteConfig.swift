@@ -19,6 +19,14 @@ extension RemoteConfigManagerCreator: Creator {
 extension Kovalee {
 	public static let abTestKey = "ab_test_version"
 
+	/// Set the fetch timeout for ``Firebase/RemoteConfig``
+	///
+	/// - Parameters:
+	///    - timeout: value of the timeout in seconds
+	public static func setFetchTimeout(_ timeout: Double) {
+		Self.shared.kovaleeManager?.setFetchTimeout(timeout)
+	}
+
 	/// Retrieve Firebase ``RemoteConfigValue`` for a specific key
 	///
 	/// - Parameters:
@@ -67,5 +75,17 @@ extension Kovalee {
 		}
 
 		return value
+	}
+
+	/// Set a default value for the AB test experiment
+	///	
+	///	ATTENTION: this method will only succede if no AB test value has been previously fetched.
+	///	Once the value has been set, it will be final. It won't be overriden, not even if subsequently fetched from remote.
+	///	The value set with this method will be the definitive AB test value for the current user.
+	///
+	/// - Parameters:
+	///    - value: the value to be set to the AB Test experiment
+	public static func setAbTestValue(_ value: String) {
+		Self.shared.kovaleeManager?.setAbTestValue(value)
 	}
 }
