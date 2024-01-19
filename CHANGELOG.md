@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2024-01-19
+### :sparkles: New Features
+- [`bfa8797`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/bfa8797d4d641f11c0caa0a41bfd97bef62e1dbf) - new method for setting the AB test value manually and to set a remote fetch timeout *(commit by [@fto-k](https://github.com/fto-k))*
+
+### :wrench: Chores
+- [`52b12f8`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/52b12f80002421fdd78b0455c0b269cf655d9b3d) - restored KovaleeSDK to main branch *(commit by [@fto-k](https://github.com/fto-k))*
+
+
 ## [1.3.2] - 2023-12-05
 ### :bug: Bug Fixes
 - [`bd125dd`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/bd125dd841abc54d2c014527b1bb97f609d1c237) - rolling back RemoteConfig *(commit by [@fto-k](https://github.com/fto-k))*
@@ -44,3 +52,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.3.0]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.2.1...1.3.0
 [1.3.1]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.0...1.3.1
 [1.3.2]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.1...1.3.2
+[1.4.0]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.2...1.4.0
