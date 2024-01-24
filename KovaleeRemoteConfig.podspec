@@ -25,7 +25,7 @@ It's part of a broader project KovaleeSDK
   spec.swift_version    = '5.7'
   spec.source_files  = "Sources/KovaleeRemoteConfig/*.swift"
 
-  spec.dependency "KovaleeSDK", '> 1.5.5'
+  spec.dependency "KovaleeSDK", '> 1.6.0'
 
   spec.static_framework = true
 
