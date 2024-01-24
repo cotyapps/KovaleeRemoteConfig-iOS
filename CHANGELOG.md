@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] - 2024-01-24
+### :sparkles: New Features
+- [`1bd8fa3`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/1bd8fa311d557e5c10c7298e40383c1e0ae6322a) - new function to retrieve, localy stored, ab test value *(commit by [@fto-k](https://github.com/fto-k))*
+
+### :wrench: Chores
+- [`4b9e01f`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/4b9e01f1d1810c6f715ac5a8d5206c596dd4bd06) - updated minimum version for KovaleeSDK *(commit by [@fto-k](https://github.com/fto-k))*
+- [`e9d713f`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/e9d713fa19a8ef712751e21890e6c87d679d6f0f) - removed fastlane/report.xml from git *(commit by [@fto-k](https://github.com/fto-k))*
+- [`ee94b9d`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/ee94b9de5120b72fdb6dc3f461208a74035a7c18) - removed Packaged.resolved from git *(commit by [@fto-k](https://github.com/fto-k))*
+- [`1e74b89`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/1e74b89d490ec769b612f9db3c9e71c130484c5b) - update minimum KovaleeSDK version in podspec *(commit by [@fto-k](https://github.com/fto-k))*
+
+
 ## [1.4.0] - 2024-01-19
 ### :sparkles: New Features
 - [`bfa8797`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/bfa8797d4d641f11c0caa0a41bfd97bef62e1dbf) - new method for setting the AB test value manually and to set a remote fetch timeout *(commit by [@fto-k](https://github.com/fto-k))*
@@ -53,3 +64,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.3.1]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.0...1.3.1
 [1.3.2]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.1...1.3.2
 [1.4.0]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.2...1.4.0
+[1.4.1]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.4.0...1.4.1
