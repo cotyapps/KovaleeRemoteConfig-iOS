@@ -88,4 +88,16 @@ extension Kovalee {
 	public static func setAbTestValue(_ value: String) {
 		Self.shared.kovaleeManager?.setAbTestValue(value)
 	}
+
+	/// Retrieve the local value associated with an AB testing experiment.
+	///
+	/// This function will only return a value if one of the following 2 conditions is met:
+	/// - the remote ab test value has been fetched during a previous run of the app
+	/// - if the ab test value has been set manually using ``setAbTestValue(_:)``
+	/// If none of the two conditions is met, the function will return nil
+	///
+	/// - Returns: retrieve the requested ab test value if found
+	public static func localAbTestValue() -> String? {
+		Self.shared.kovaleeManager?.localABTestValue()
+	}
 }
