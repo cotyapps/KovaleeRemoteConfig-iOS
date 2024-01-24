@@ -4,4 +4,4 @@ Packages
 .swiftpm
 .netrc
 
-fatlane/report.xml
+fastlane/report.xml

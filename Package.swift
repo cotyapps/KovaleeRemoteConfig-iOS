@@ -18,7 +18,7 @@ let package = Package(
 		),
     ],
     dependencies: [
-		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", from: Version(1, 6, 0)),
+		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", from: Version(1, 6, 1)),
 		.package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: Version(10, 12, 0))
     ],
     targets: [
