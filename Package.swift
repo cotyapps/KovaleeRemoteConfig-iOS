@@ -27,7 +27,7 @@ let package = Package(
 			dependencies: [
 				.product(name: "KovaleeSDK", package: "Kovalee-iOS-SDK"),
 				.product(name: "FirebaseAnalyticsSwift", package: "firebase-ios-sdk"),
-				.product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk"),
+				.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
 				.product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
 			]
 		)
