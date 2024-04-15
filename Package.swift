@@ -29,6 +29,9 @@ let package = Package(
 				.product(name: "FirebaseAnalyticsSwift", package: "firebase-ios-sdk"),
 				.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
 				.product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
+			],
+			resources: [
+				.copy("PrivacyInfo.xcprivacy"),
 			]
 		)
     ]

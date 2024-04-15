@@ -4,5 +4,5 @@ Packages
 .swiftpm
 .netrc
 
-Packages.resolved
+Package.resolved
 fastlane/report.xml
