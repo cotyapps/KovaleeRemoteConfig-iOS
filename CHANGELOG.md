@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.2] - 2024-04-19
+### :wrench: Chores
+- [`bdb375c`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/bdb375caf2b97ae6865e448fd0dc98ab1639d23a) - set minimum dependency version in podspecs *(commit by [@fto-k](https://github.com/fto-k))*
+
+
 ## [1.5.1] - 2024-04-15
 ### :wrench: Chores
 - [`9f35415`](https://github.com/cotyapps/KovaleeRemoteConfig-iOS/commit/9f354156304a69b8ad697bec1551e5a771e70da9) - updated privacy manifest *(commit by [@fto-k](https://github.com/fto-k))*
@@ -71,3 +76,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.4.0]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.3.2...1.4.0
 [1.4.1]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.4.0...1.4.1
 [1.5.1]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.5.0...1.5.1
+[1.5.2]: https://github.com/cotyapps/KovaleeRemoteConfig-iOS/compare/1.5.1...1.5.2
