@@ -27,12 +27,11 @@ extension Kovalee {
 		Self.shared.kovaleeManager?.setFetchTimeout(timeout)
 	}
 
-	/// Retrieve Firebase ``RemoteConfigValue`` for a specific key
+	/// Retrieves asynchronously Firebase ``RemoteConfigValue`` for a specific key
 	///
 	/// - Parameters:
 	///    - key: string key of the remote value that the user is trying to load
 	/// - Returns: retrieve the requested ``RemoteConfigValue`` if found
-	/// - Throws: throws an error of type ``KovaleeError/remoteValueAlreadyUsedForABTest`` if they key is used for an AB Test experiment
 	public static func remoteValue(forKey key: String) async -> RemoteConfigValue? {
 		guard key != abTestKey else {
 			KLogger.error("❌ ab_test_version is a private key and can't be used for remote config")
@@ -45,7 +44,23 @@ extension Kovalee {
 
 		return RemoteConfigValue(data: data)
 	}
-	
+
+	/// Retrieves asynchronously Firebase ``RemoteConfigValue`` for a specific key
+	///
+	/// - Parameters:
+	///    - key: string key of the remote value that the user is trying to load
+	///    - completion: A closure that is called with the result of the fetch operation.
+	///   	 This closure has no return value and takes the following parameter:
+	///   	 - value: The requested value as a ``RemoteConfigValue``. If no value is found, `nil` is provided.
+	public static func remoteValue(
+		forKey key: String,
+		withCompletion completion: @escaping (RemoteConfigValue?) -> Void
+	) {
+		Task {
+			completion(await Self.remoteValue(forKey: key))
+		}
+	}
+
 	/// Set Default values in the Firebase RemoteConfig.
 	///	This method shold be only used for Remote Values NOT AB tests
 	///
@@ -77,10 +92,21 @@ extension Kovalee {
 		return value
 	}
 
+	/// Retrieves the value associated with an AB testing experiment asynchronously.
+	///
+	/// - Parameter completion: A closure that is called with the result of the fetch operation.
+	///   This closure has no return value and takes the following parameter:
+	///   - value: The retrieved AB test value as a `String?`. If no value is found, `nil` is provided.
+	public static func abTestValue(withCompletion completion: @escaping (String?) -> Void) {
+		Task {
+			completion(await Self.abTestValue())
+		}
+	}
+
 	/// Set a default value for the AB test experiment
 	///	
-	///	ATTENTION: this method will only succede if no AB test value has been previously fetched.
-	///	Once the value has been set, it will be final. It won't be overriden, not even if subsequently fetched from remote.
+	///	ATTENTION: this method will only succeed if no AB test value has been previously fetched.
+	///	Once the value has been set, it will be final. It won't be overridden, not even if subsequently fetched from remote.
 	///	The value set with this method will be the definitive AB test value for the current user.
 	///
 	/// - Parameters:
